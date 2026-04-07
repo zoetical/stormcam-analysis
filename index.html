@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storm Camera — 产品深度分析</title>
+  <meta name="description" content="基于1,170条App Store用户评论的数据驱动分析报告">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating nav -->
+  <nav class="side-nav" id="sideNav">
+    <button class="nav-dot active" data-section="hero" title="概览"><span>概览</span></button>
+    <button class="nav-dot" data-section="ratings" title="评分"><span>评分</span></button>
+    <button class="nav-dot" data-section="feedback" title="反馈"><span>反馈</span></button>
+    <button class="nav-dot" data-section="versions" title="版本"><span>版本</span></button>
+    <button class="nav-dot" data-section="demands" title="需求"><span>需求</span></button>
+    <button class="nav-dot" data-section="compete" title="竞品"><span>竞品</span></button>
+    <button class="nav-dot" data-section="action" title="行动"><span>行动</span></button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="section hero-section" id="hero">
+    <div class="hero-logo">
+      <!-- Inline the ysjf logo SVG, recolored white -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path class="logo-circle" d="m50,6C25.7,6,6,25.7,6,50s19.7,44,44,44,44-19.7,44-44S74.3,6,50,6ZM12.58,49.97c0-20.67,16.76-37.42,37.42-37.42,5.64,0,10.98,1.25,15.77,3.48,2.56,5.4,7.45,16.49,9.01,25.51.82,4.92.47,9.02-.27,12.2.18-1.22.28-2.46.28-3.73,0-13.69-11.1-24.79-24.79-24.79-7.54,0-14.29,3.37-18.84,8.68-3.99,4.15-8.41,11.65-8.74,22.61-.2,6.72.63,14.65,1.39,20.19-6.93-6.79-11.23-16.26-11.23-26.72Zm25.85.03c0,4.26,2.31,7.97,5.74,9.99,2.02,1.32,5.25,3.12,7.5,3.3,5.63.46,10.8-.89,14.64-2.6-3.49,5.26-9.46,8.73-16.24,8.73-8.42,0-15.6-5.35-18.31-12.84-.33-3.99.08-10.22,4.94-14.11,5.48-4.38,9.91-4.33,11.96-3.96-5.76.67-10.23,5.56-10.23,11.49Zm24.46,7.9c-4.96,3.82-9.39,3.91-11.63,3.6,5.8-.63,10.32-5.54,10.32-11.51,0-3.89-1.92-7.32-4.86-9.42.02,0,.05.01.04.01-1.6-1.17-5.46-3.39-7.68-3.74-5.56-.88-11.35.69-15.46,2.64,3.46-5.43,9.52-9.03,16.43-9.03,8.44,0,15.62,5.36,18.32,12.87.2,3.9-.33,10.59-5.5,14.57Zm-12.88,29.49c-5.52,0-10.76-1.2-15.48-3.34-2.68-5.42-7.74-16.47-9.29-25.45-.8-4.8-.48-8.82.21-11.96-.15,1.1-.23,2.22-.23,3.35,0,13.69,11.1,24.79,24.79,24.79,8.18,0,15.43-3.96,19.95-10.07,3.64-4.35,7.35-11.35,7.64-21.09.21-6.8-.6-14.79-1.32-20.32,6.89,6.79,11.16,16.22,11.16,26.65,0,20.67-16.76,37.42-37.42,37.42Z"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">PRODUCT DEEP DIVE</div>
+      <h1 class="hero-title">
+        <span class="title-line">飓风相机</span>
+        <span class="title-sub">Storm Camera</span>
+      </h1>
+      <p class="hero-subtitle">基于 <strong>1,170</strong> 条 App Store 用户评论的数据驱动分析</p>
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-value" data-count="4.8">0</span>
+          <span class="stat-label">App Store 评分</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-value" data-count="100" data-suffix="万+">0</span>
+          <span class="stat-label">下载量</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-value" data-count="20" data-suffix="+">0</span>
+          <span class="stat-label">版本迭代</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-value" data-count="6" data-suffix="个月">0</span>
+          <span class="stat-label">上线时长</span>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-tag">iOS 17.0+</span>
+        <span class="meta-tag">v1.4.3</span>
+        <span class="meta-tag">¥20 Pro 买断</span>
+        <span class="meta-tag">103.9 MB</span>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <span>SCROLL TO EXPLORE</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== RATINGS ===== -->
+  <section class="section" id="ratings">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">01 — RATINGS</span>
+        <h2 class="section-title">评分数据分析</h2>
+        <p class="section-desc">正面率 72.9%，但 1★ 占比 13.6%，呈<em>两极分化</em>趋势</p>
+      </div>
+
+      <div class="ratings-grid fade-in">
+        <div class="rating-dist-card">
+          <h3 class="card-label">评分分布</h3>
+          <div class="dist-bars">
+            <div class="dist-row">
+              <span class="dist-star">5★</span>
+              <div class="dist-bar-track"><div class="dist-bar-fill" data-width="59.9" style="--bar-color: var(--accent-mint)"></div></div>
+              <span class="dist-count">701</span>
+              <span class="dist-pct">59.9%</span>
+            </div>
+            <div class="dist-row">
+              <span class="dist-star">4★</span>
+              <div class="dist-bar-track"><div class="dist-bar-fill" data-width="13.0" style="--bar-color: var(--accent-green)"></div></div>
+              <span class="dist-count">152</span>
+              <span class="dist-pct">13.0%</span>
+            </div>
+            <div class="dist-row">
+              <span class="dist-star">3★</span>
+              <div class="dist-bar-track"><div class="dist-bar-fill" data-width="9.4" style="--bar-color: var(--text-tertiary)"></div></div>
+              <span class="dist-count">110</span>
+              <span class="dist-pct">9.4%</span>
+            </div>
+            <div class="dist-row">
+              <span class="dist-star">2★</span>
+              <div class="dist-bar-track"><div class="dist-bar-fill" data-width="4.1" style="--bar-color: var(--accent-orange)"></div></div>
+              <span class="dist-count">48</span>
+              <span class="dist-pct">4.1%</span>
+            </div>
+            <div class="dist-row">
+              <span class="dist-star">1★</span>
+              <div class="dist-bar-track"><div class="dist-bar-fill" data-width="13.6" style="--bar-color: var(--accent-red)"></div></div>
+              <span class="dist-count">159</span>
+              <span class="dist-pct">13.6%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trend-card">
+          <h3 class="card-label">月度评分趋势</h3>
+          <div class="trend-chart">
+            <svg viewBox="0 0 600 240" class="trend-svg" id="trendSvg"></svg>
+            <div class="trend-labels" id="trendLabels"></div>
+          </div>
+          <div class="trend-insight">
+            <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <p>3月评分暴跌至 <strong>3.32</strong> — v1.4.0大更新引发的质量回归</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEEDBACK ===== -->
+  <section class="section" id="feedback">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">02 — FEEDBACK</span>
+        <h2 class="section-title">用户反馈分类</h2>
+        <p class="section-desc">按优先级排列的用户痛点与需求图谱</p>
+      </div>
+      <div class="feedback-controls fade-in">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="P0">P0 紧急</button>
+        <button class="filter-btn" data-filter="P1">P1 重要</button>
+        <button class="filter-btn" data-filter="P2">P2 一般</button>
+        <button class="filter-btn" data-filter="P3">P3 低</button>
+      </div>
+      <div class="feedback-grid" id="feedbackGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== VERSIONS ===== -->
+  <section class="section" id="versions">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">03 — VERSIONS</span>
+        <h2 class="section-title">版本更新时间线</h2>
+        <p class="section-desc">半年 20+ 版本，几乎周更节奏</p>
+      </div>
+      <div class="timeline fade-in" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ===== DEMANDS ===== -->
+  <section class="section" id="demands">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">04 — DEMAND TRACKING</span>
+        <h2 class="section-title">需求解决进度</h2>
+        <p class="section-desc">追踪用户需求从提出到解决的全生命周期</p>
+      </div>
+      <div class="demand-tabs fade-in">
+        <button class="demand-tab active" data-tab="resolved">已解决 <span class="tab-count">13</span></button>
+        <button class="demand-tab" data-tab="partial">部分解决 <span class="tab-count">5</span></button>
+        <button class="demand-tab" data-tab="unresolved">未解决 <span class="tab-count">16</span></button>
+      </div>
+      <div class="demand-panel active" id="panel-resolved"><div class="demand-list" id="resolvedList"></div></div>
+      <div class="demand-panel" id="panel-partial"><div class="demand-list" id="partialList"></div></div>
+      <div class="demand-panel" id="panel-unresolved"><div class="demand-list" id="unresolvedList"></div></div>
+
+      <div class="progress-summary fade-in">
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" viewBox="0 0 200 200">
+            <circle class="ring-bg" cx="100" cy="100" r="85" />
+            <circle class="ring-resolved" cx="100" cy="100" r="85" stroke-dasharray="534" stroke-dashoffset="534" />
+            <circle class="ring-partial" cx="100" cy="100" r="85" stroke-dasharray="534" stroke-dashoffset="534" />
+          </svg>
+          <div class="ring-center">
+            <span class="ring-pct">38%</span>
+            <span class="ring-label">已解决</span>
+          </div>
+        </div>
+        <div class="progress-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:var(--accent-green)"></span>已解决 13</div>
+          <div class="legend-item"><span class="legend-dot" style="background:var(--accent-orange)"></span>部分解决 5</div>
+          <div class="legend-item"><span class="legend-dot" style="background:var(--text-quaternary)"></span>未解决 16</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPETE ===== -->
+  <section class="section" id="compete">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">05 — COMPETITIVE</span>
+        <h2 class="section-title">竞品对比</h2>
+        <p class="section-desc">飓风相机 vs Blackmagic Camera vs Kino</p>
+      </div>
+      <div class="compete-table-wrap fade-in">
+        <table class="compete-table">
+          <thead>
+            <tr>
+              <th class="compete-dim">维度</th>
+              <th class="compete-brand storm">飓风相机</th>
+              <th class="compete-brand bmc">Blackmagic</th>
+              <th class="compete-brand kino">Kino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="compete-dim">定价</td><td>免费+¥20 Pro</td><td class="highlight">完全免费</td><td>$9.99 买断</td></tr>
+            <tr><td class="compete-dim">实时 LUT</td><td class="yes">支持</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+            <tr><td class="compete-dim">LUT 浓度调节</td><td class="no">不支持</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+            <tr><td class="compete-dim">自定义 LUT</td><td class="no">不支持</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+            <tr><td class="compete-dim">直方图</td><td class="no">不支持</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+            <tr><td class="compete-dim">峰值对焦</td><td class="no">不支持</td><td class="yes">支持</td><td class="yes">支持</td></tr>
+            <tr><td class="compete-dim">上手难度</td><td class="highlight">低</td><td>高</td><td>中</td></tr>
+            <tr><td class="compete-dim">UI 设计感</td><td>★★★★</td><td>★★</td><td class="highlight">★★★★★</td></tr>
+            <tr><td class="compete-dim">生态绑定</td><td class="highlight">飓风课程/社群</td><td>DaVinci Resolve</td><td>Halide 开发商</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="compete-insight fade-in">
+        <blockquote>用户对比 Blackmagic Camera 多达 <strong>21次</strong>。核心矛盾：「BMC免费但功能更全」vs「飓风相机UI更好更易上手」</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACTION ===== -->
+  <section class="section" id="action">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">06 — ACTION PLAN</span>
+        <h2 class="section-title">建议行动方案</h2>
+      </div>
+      <div class="action-lanes fade-in">
+        <div class="action-lane">
+          <div class="lane-header"><span class="lane-phase">短期</span><span class="lane-time">1-2 个版本</span></div>
+          <div class="lane-items">
+            <div class="lane-item"><span class="item-num">01</span><p>上线 LUT 浓度滑块 — 解决最高频需求</p></div>
+            <div class="lane-item"><span class="item-num">02</span><p>添加直方图 — 缩小与BMC差距</p></div>
+            <div class="lane-item"><span class="item-num">03</span><p>「一键存入相册」导出快捷方式</p></div>
+            <div class="lane-item"><span class="item-num">04</span><p>Crash 监控体系建立 — 数据驱动稳定性</p></div>
+          </div>
+        </div>
+        <div class="action-lane">
+          <div class="lane-header"><span class="lane-phase">中期</span><span class="lane-time">3-6 个月</span></div>
+          <div class="lane-items">
+            <div class="lane-item"><span class="item-num">01</span><p>半自动曝光模式（S优先/A优先）</p></div>
+            <div class="lane-item"><span class="item-num">02</span><p>自定义 LUT 导入 — 功能性里程碑</p></div>
+            <div class="lane-item"><span class="item-num">03</span><p>拍照模块完善（裁切、更多比例）</p></div>
+            <div class="lane-item"><span class="item-num">04</span><p>定价策略统一 + 权益声明规范化</p></div>
+          </div>
+        </div>
+        <div class="action-lane">
+          <div class="lane-header"><span class="lane-phase">长期</span><span class="lane-time">6-12 个月</span></div>
+          <div class="lane-items">
+            <div class="lane-item"><span class="item-num">01</span><p>iPad 适配 — 新用户群</p></div>
+            <div class="lane-item"><span class="item-num">02</span><p>LUT 社区 / 影调市集 — 商业化+生态</p></div>
+            <div class="lane-item"><span class="item-num">03</span><p>AI 辅助功能（智能调色、场景识别）</p></div>
+            <div class="lane-item"><span class="item-num">04</span><p>与闪电分镜的深度联动 — 生态协同</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pm-summary fade-in">
+        <div class="summary-card good">
+          <h3><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round"><path d="M14 9V5a3 3 0 00-6 0v1"/><path d="M18 8H5a2 2 0 00-2 2v10a2 2 0 002 2h13a2 2 0 002-2V10a2 2 0 00-2-2z"/><polyline points="9 12 11 14 15 10"/></svg></span>值得延续的策略</h3>
+          <ul>
+            <li>迭代速度极快 — 半年20+版本，几乎周更节奏</li>
+            <li>听用户声音 — 批量导出、闪光灯等高频需求合理时间内上线</li>
+            <li>v1.4.0 是一次勇敢的大版本 — 全机型影调支持</li>
+            <li>更新日志人格化 — 产品有温度，暗合品牌调性</li>
+          </ul>
+        </div>
+        <div class="summary-card warn">
+          <h3><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>值得关注的信号</h3>
+          <ul>
+            <li>大版本质量把控 — v1.4.0 引发3月评分暴跌</li>
+            <li>核心功能 gap — LUT浓度、直方图、自定义LUT 半年未解决</li>
+            <li>客服是最大盲区 — 22条提及，平均分2.68</li>
+            <li>缺数据驱动 — 稳定性靠用户反馈而非 Crash 监控</li>
+            <li>定价沟通 — 信息差和措辞问题持续发酵</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="final-statement fade-in">
+        <blockquote>
+          <p class="final-quote">不是要做「简单版的BMC」，<br>而是要做「影视飓风世界观下的理想相机」。</p>
+          <footer>「你的第一台电影机。简单到一键，专业到够用。」</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>数据范围：2025-10-28 ~ 2026-04-06 · 1,170 条 App Store 评论 · 分析日期：2026-04-07</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
