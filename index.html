@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Storm Camera — 产品深度分析</title>
-  <meta name="description" content="基于1,170条App Store用户评论的数据驱动分析报告">
+  <meta name="description" content="基于1,215条App Store用户评论的数据驱动分析报告">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,6 +18,7 @@
     <button class="nav-dot" data-section="versions" title="版本"><span>版本</span></button>
     <button class="nav-dot" data-section="demands" title="需求"><span>需求</span></button>
     <button class="nav-dot" data-section="compete" title="竞品"><span>竞品</span></button>
+    <button class="nav-dot" data-section="global" title="国际"><span>国际</span></button>
     <button class="nav-dot" data-section="action" title="行动"><span>行动</span></button>
   </nav>
 
@@ -35,7 +36,7 @@
         <span class="title-line">飓风相机</span>
         <span class="title-sub">Storm Camera</span>
       </h1>
-      <p class="hero-subtitle">基于 <strong>1,170</strong> 条 App Store 用户评论的数据驱动分析</p>
+      <p class="hero-subtitle">基于 <strong>1,215</strong> 条 App Store 用户评论的数据驱动分析（中国区 + 美国区）</p>
       <div class="hero-stats">
         <div class="stat-pill">
           <span class="stat-value" data-count="4.8">0</span>
@@ -46,7 +47,7 @@
           <span class="stat-label">下载量</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-value" data-count="20" data-suffix="+">0</span>
+          <span class="stat-value" data-count="25">0</span>
           <span class="stat-label">版本迭代</span>
         </div>
         <div class="stat-pill">
@@ -153,7 +154,7 @@
       <div class="section-header fade-in">
         <span class="section-marker">03 — VERSIONS</span>
         <h2 class="section-title">版本更新时间线</h2>
-        <p class="section-desc">半年 20+ 版本，几乎周更节奏</p>
+        <p class="section-desc">半年 25 个版本，几乎周更节奏</p>
       </div>
       <div class="timeline fade-in" id="timeline"></div>
     </div>
@@ -170,7 +171,7 @@
       <div class="demand-tabs fade-in">
         <button class="demand-tab active" data-tab="resolved">已解决 <span class="tab-count">13</span></button>
         <button class="demand-tab" data-tab="partial">部分解决 <span class="tab-count">5</span></button>
-        <button class="demand-tab" data-tab="unresolved">未解决 <span class="tab-count">16</span></button>
+        <button class="demand-tab" data-tab="unresolved">未解决 <span class="tab-count">17</span></button>
       </div>
       <div class="demand-panel active" id="panel-resolved"><div class="demand-list" id="resolvedList"></div></div>
       <div class="demand-panel" id="panel-partial"><div class="demand-list" id="partialList"></div></div>
@@ -184,14 +185,14 @@
             <circle class="ring-partial" cx="100" cy="100" r="85" stroke-dasharray="534" stroke-dashoffset="534" />
           </svg>
           <div class="ring-center">
-            <span class="ring-pct">38%</span>
+            <span class="ring-pct">37%</span>
             <span class="ring-label">已解决</span>
           </div>
         </div>
         <div class="progress-legend">
           <div class="legend-item"><span class="legend-dot" style="background:var(--accent-green)"></span>已解决 13</div>
           <div class="legend-item"><span class="legend-dot" style="background:var(--accent-orange)"></span>部分解决 5</div>
-          <div class="legend-item"><span class="legend-dot" style="background:var(--text-quaternary)"></span>未解决 16</div>
+          <div class="legend-item"><span class="legend-dot" style="background:var(--text-quaternary)"></span>未解决 17</div>
         </div>
       </div>
     </div>
@@ -234,11 +235,80 @@
     </div>
   </section>
 
+  <!-- ===== GLOBAL ===== -->
+  <section class="section" id="global">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-marker">06 — GLOBAL</span>
+        <h2 class="section-title">国际市场洞察</h2>
+        <p class="section-desc">美区 45 条评论中 <em>89% 为非英文原生用户</em></p>
+      </div>
+
+      <div class="ratings-grid fade-in" style="grid-template-columns: 1fr 1fr;">
+        <div class="rating-dist-card">
+          <h3 class="card-label">美区用户画像</h3>
+          <div class="hero-stats" style="max-width:100%; margin-bottom:1rem;">
+            <div class="stat-pill"><span class="stat-value">45</span><span class="stat-label">评论总数</span></div>
+            <div class="stat-pill"><span class="stat-value">4.00</span><span class="stat-label">平均评分</span></div>
+            <div class="stat-pill"><span class="stat-value" style="color:var(--accent-orange)">89%</span><span class="stat-label">中文评论</span></div>
+            <div class="stat-pill"><span class="stat-value">5</span><span class="stat-label">英文评论</span></div>
+          </div>
+          <div class="trend-insight" style="border-left-color: var(--accent-orange);">
+            <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <p>美区评论尚不能体现真正的国际化状态：<strong>89%</strong> 为中文评论，英文原生用户极少</p>
+          </div>
+        </div>
+        <div class="rating-dist-card">
+          <h3 class="card-label">美区阻断性问题</h3>
+          <div class="demand-list" id="usIssuesList"></div>
+        </div>
+      </div>
+
+      <div class="fade-in" style="margin-top:1.5rem;">
+        <div class="compete-table-wrap">
+          <table class="compete-table">
+            <thead>
+              <tr><th class="compete-dim">需求主题</th><th class="compete-brand storm">中国区</th><th class="compete-brand bmc">美区</th><th>共识</th></tr>
+            </thead>
+            <tbody id="crossMarketTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="fade-in" style="margin-top:1.5rem;">
+        <h3 class="card-label" style="margin-bottom:1rem;">国际化路线建议</h3>
+        <div class="action-lanes">
+          <div class="action-lane">
+            <div class="lane-header"><span class="lane-phase">Phase 1</span><span class="lane-time">修复阻断</span></div>
+            <div class="lane-items">
+              <div class="lane-item"><span class="item-num">01</span><p>海外登录改邮箱 / Apple ID 验证</p></div>
+              <div class="lane-item"><span class="item-num">02</span><p>统一 Apple IAP 跨区订阅同步</p></div>
+            </div>
+          </div>
+          <div class="action-lane">
+            <div class="lane-header"><span class="lane-phase">Phase 2</span><span class="lane-time">本地化打磨</span></div>
+            <div class="lane-items">
+              <div class="lane-item"><span class="item-num">01</span><p>App Store 英文描述 / 截图优化</p></div>
+              <div class="lane-item"><span class="item-num">02</span><p>英文版 UI 文案审查与体验打磨</p></div>
+            </div>
+          </div>
+          <div class="action-lane">
+            <div class="lane-header"><span class="lane-phase">Phase 3</span><span class="lane-time">海外增长</span></div>
+            <div class="lane-items">
+              <div class="lane-item"><span class="item-num">01</span><p>YouTube / Reddit 摄影社区推广</p></div>
+              <div class="lane-item"><span class="item-num">02</span><p>App Store ASO 英文关键词优化</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== ACTION ===== -->
   <section class="section" id="action">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-marker">06 — ACTION PLAN</span>
+        <span class="section-marker">07 — ACTION PLAN</span>
         <h2 class="section-title">建议行动方案</h2>
       </div>
       <div class="action-lanes fade-in">
@@ -275,7 +345,7 @@
         <div class="summary-card good">
           <h3><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round"><path d="M14 9V5a3 3 0 00-6 0v1"/><path d="M18 8H5a2 2 0 00-2 2v10a2 2 0 002 2h13a2 2 0 002-2V10a2 2 0 00-2-2z"/><polyline points="9 12 11 14 15 10"/></svg></span>值得延续的策略</h3>
           <ul>
-            <li>迭代速度极快 — 半年20+版本，几乎周更节奏</li>
+            <li>迭代速度极快 — 半年25个版本，几乎周更节奏</li>
             <li>听用户声音 — 批量导出、闪光灯等高频需求合理时间内上线</li>
             <li>v1.4.0 是一次勇敢的大版本 — 全机型影调支持</li>
             <li>更新日志人格化 — 产品有温度，暗合品牌调性</li>
@@ -303,7 +373,7 @@
   </section>
 
   <footer class="site-footer">
-    <p>数据范围：2025-10-28 ~ 2026-04-06 · 1,170 条 App Store 评论 · 分析日期：2026-04-07</p>
+    <p>数据范围：2025-10-28 ~ 2026-04-07 · 1,215 条 App Store 评论（中国区 + 美国区） · 分析日期：2026-04-08</p>
   </footer>
 
   <script src="app.js"></script>

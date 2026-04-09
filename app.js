@@ -26,6 +26,7 @@
     message: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>',
     folder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>',
     zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>',
   };
 
   function icon(name) { return ICONS[name] || ''; }
@@ -51,73 +52,93 @@
 
   // ---------- VERSION DATA ----------
   const VERSION_DATA = [
-    { v: 'v1.0.0', date: '2024-10-28', major: true, milestone: '上线', content: '首发上线 · ProRes/Log拍摄 · 实时LUT预览' },
-    { v: 'v1.0.1', date: '2024-11-01', content: '紧急修复闪退 · 优化首页布局' },
-    { v: 'v1.0.2', date: '2024-11-04', content: '修复 iPhone 16 Pro 兼容性问题' },
-    { v: 'v1.0.3', date: '2024-11-05', content: '修复录制中断 · 优化LUT加载速度' },
-    { v: 'v1.0.4', date: '2024-11-12', content: '修复音频同步 · 新增3款LUT' },
-    { v: 'v1.0.5', date: '2024-11-22', content: '拍照模式上线 · 修复竖屏旋转' },
-    { v: 'v1.0.6', date: '2024-11-28', content: '修复导出卡顿 · 优化内存占用' },
-    { v: 'v1.1.0', date: '2024-12-04', major: true, content: '<strong>闪光灯支持</strong> · 批量导出 · 新LUT包' },
-    { v: 'v1.1.1', date: '2024-12-06', content: '修复闪光灯崩溃 · 优化电池消耗' },
-    { v: 'v1.1.2', date: '2024-12-11', content: '修复4K导出问题 · 水印优化' },
-    { v: 'v1.2.0', date: '2024-12-19', major: true, content: '<strong>外接设备支持</strong> · 蓝牙快门 · 新增更多分辨率' },
-    { v: 'v1.2.1', date: '2024-12-20', content: '修复蓝牙连接不稳定' },
-    { v: 'v1.2.2', date: '2024-12-27', content: '优化低温环境稳定性' },
-    { v: 'v1.3.0', date: '2025-01-09', major: true, content: '<strong>分段录制</strong> · 时间码显示 · 焦距锁定' },
-    { v: 'v1.3.1', date: '2025-01-15', content: '修复分段录制音画不同步' },
-    { v: 'v1.3.2', date: '2025-01-22', content: '修复低存储空间崩溃' },
-    { v: 'v1.3.3', date: '2025-02-05', content: '新年LUT包 · 优化启动速度' },
-    { v: 'v1.3.4', date: '2025-02-18', content: '修复特定机型花屏问题' },
-    { v: 'v1.4.0', date: '2025-03-06', major: true, milestone: '大更新', content: '<strong>全机型影调支持</strong> · 重构渲染管线 · 新UI框架' },
-    { v: 'v1.4.1', date: '2025-03-12', content: '紧急修复 v1.4.0 闪退 · 发热优化' },
-    { v: 'v1.4.2', date: '2025-03-22', content: '修复影调切换卡顿 · 内存泄漏修复' },
-    { v: 'v1.4.3', date: '2025-04-02', content: '稳定性全面优化 · 修复多个Crash' },
+    { v: 'v1.1.1', date: '2025-10-26', major: true, milestone: '首发', content: '首发上线 · 细节更新和bug修复' },
+    { v: 'v1.1.2', date: '2025-10-28', content: '修复了一些bug' },
+    { v: 'v1.1.3', date: '2025-10-29', content: '优化动态图拍摄 · 优化UI表述 · 性能优化' },
+    { v: 'v1.1.4', date: '2025-11-02', content: '新增地理位置/EXIF保存 · 深色图标 · 更多帧率与快门速度 · 非Log机型购买Pro提示' },
+    { v: 'v1.1.5', date: '2025-11-05', content: '<strong>方向锁定</strong> · 修复闪退' },
+    { v: 'v1.1.6', date: '2025-11-07', content: '<strong>外接麦克风录制</strong> · <strong>相机快速启动</strong> · UI优化' },
+    { v: 'v1.1.7', date: '2025-11-12', major: true, milestone: '批量导出', content: '<strong>批量导出</strong> · 修复前台画面卡死' },
+    { v: 'v1.1.8', date: '2025-11-13', milestone: '100万下载', content: '媒体库筛选 · 保留上次拍摄参数' },
+    { v: 'v1.1.10', date: '2025-11-20', content: '<strong>Liquid Glass效果</strong> · 蓝牙麦克风 · 麦克风输入源选择 · 部分设备2x焦段' },
+    { v: 'v1.1.11', date: '2025-11-26', content: '解决了一些已知问题' },
+    { v: 'v1.1.12', date: '2025-11-30', content: '修复闪退' },
+    { v: 'v1.2.0', date: '2025-12-08', major: true, milestone: '评分破万', content: '<strong>OpenGate</strong> · 拍照模式支持静帧/画幅/色彩空间 · 移除非Log机型拍摄限制' },
+    { v: 'v1.3.0', date: '2025-12-22', major: true, content: '<strong>资源库增强</strong> · 左右滑动切换 · 静音导出 · 批量导出可批量改LUT · Liquid Glass UI' },
+    { v: 'v1.3.1', date: '2025-12-28', content: '提升拍摄稳定性' },
+    { v: 'v1.3.2', date: '2026-01-08', major: true, content: '<strong>回收站</strong> · 录制异常提醒 · sRGB OG 48MP · 视频/图片参数独立 · 飓风相机相簿 · 码率提升' },
+    { v: 'v1.3.3', date: '2026-01-15', content: '修复sRGB绿边/清晰度异常 · 修复批量导出封面 · 修复稳定器记忆 · 一键切换到Log' },
+    { v: 'v1.3.4', date: '2026-01-17', content: '修复拍照切视频闪退' },
+    { v: 'v1.3.5', date: '2026-02-12', major: true, content: '<strong>HDR LUT</strong> · <strong>闪光灯</strong> · 参数页新UI · 媒体库显示数量' },
+    { v: 'v1.3.6', date: '2026-02-13', content: '修复16:9实况绿边' },
+    { v: 'v1.3.7', date: '2026-02-25', content: '<strong>存储位置选项</strong>（系统相册/App内）' },
+    { v: 'v1.3.8', date: '2026-03-06', content: '修复画面拉伸 · 素材库入口 · 位置信息丢失 · 非Log购买提醒加强' },
+    { v: 'v1.4.0', date: '2026-03-30', major: true, milestone: '大更新', content: '<strong>全机型影调</strong> · 拍照拆分Log实况+照片 · <strong>48MP拍照</strong> · 8个新影调 · 电影级/极致防抖 · 英语支持 · 倒置拍摄' },
+    { v: 'v1.4.1', date: '2026-03-31', content: '<strong>繁体中文</strong> · 优化影调切换记忆 · 修复iOS17闪退 · 修复批量导出影调问题' },
+    { v: 'v1.4.2', date: '2026-04-01', content: '优化拍摄模式/镜头切换响应速度 · 修复倒置拍摄导出异常' },
+    { v: 'v1.4.3', date: '2026-04-03', content: '修复非4:3照片HDR增益丢失 · 修复openGate+极致防抖丢失音频' },
   ];
 
   // ---------- DEMAND DATA ----------
   const DEMANDS = {
     resolved: [
-      { name: '闪光灯', ver: 'v1.1.0', icon: 'zap' },
-      { name: '批量导出', ver: 'v1.1.0', icon: 'download' },
-      { name: '外接设备蓝牙', ver: 'v1.2.0', icon: 'tablet' },
-      { name: '分段录制', ver: 'v1.3.0', icon: 'film' },
-      { name: '时间码显示', ver: 'v1.3.0', icon: 'aperture' },
-      { name: '竖屏录制', ver: 'v1.0.5', icon: 'maximize' },
-      { name: '拍照模式', ver: 'v1.0.5', icon: 'camera' },
-      { name: '焦距锁定', ver: 'v1.3.0', icon: 'sliders' },
-      { name: '水印移除', ver: 'v1.1.2', icon: 'image' },
-      { name: '更多分辨率', ver: 'v1.2.0', icon: 'layout' },
-      { name: '存储空间提示', ver: 'v1.0.6', icon: 'folder' },
-      { name: '全机型影调', ver: 'v1.4.0', icon: 'film' },
-      { name: '蓝牙快门', ver: 'v1.2.0', icon: 'aperture' },
+      { name: '批量导出', ver: 'v1.1.7', icon: 'download' },
+      { name: '快速启动/侧键', ver: 'v1.1.6', icon: 'zap' },
+      { name: 'EXIF/位置信息', ver: 'v1.1.4', icon: 'camera' },
+      { name: '外接麦克风', ver: 'v1.1.6', icon: 'speaker' },
+      { name: '方向锁定', ver: 'v1.1.5', icon: 'move' },
+      { name: '非Log机型支持', ver: 'v1.2.0', icon: 'film' },
+      { name: '闪光灯', ver: 'v1.3.5', icon: 'zap' },
+      { name: '存储到系统相册', ver: 'v1.3.2', icon: 'folder' },
+      { name: '素材手势切换', ver: 'v1.3.0', icon: 'layout' },
+      { name: 'OpenGate', ver: 'v1.2.0', icon: 'maximize' },
+      { name: '多语言支持', ver: 'v1.4.0', icon: 'message' },
+      { name: '回收站', ver: 'v1.3.2', icon: 'folder' },
+      { name: '48MP 拍照', ver: 'v1.4.0', icon: 'camera' },
     ],
     partial: [
-      { name: '拍照裁切比例', detail: '有基础，缺自定义', priority: 'mid', icon: 'camera' },
-      { name: '导出到相册', detail: '可用但不够便捷', priority: 'mid', icon: 'download' },
-      { name: '录制稳定性', detail: 'v1.4.3 改善但未根治', priority: 'high', icon: 'shield' },
-      { name: '音频监控', detail: '有电平表，缺耳机监听', priority: 'mid', icon: 'speaker' },
-      { name: '更新日志通知', detail: '有但不够醒目', priority: 'low', icon: 'message' },
+      { name: '批量导出体验', detail: '核心可用，仍需简化流程', priority: 'mid', icon: 'download' },
+      { name: '稳定性/闪退', detail: '打地鼠式修复，缺系统治理', priority: 'high', icon: 'shield' },
+      { name: 'iOS版本兼容', detail: '新iOS版本总引入新问题', priority: 'mid', icon: 'tablet' },
+      { name: '画质/清晰度', detail: '怀疑编码层面未优化到极致', priority: 'mid', icon: 'image' },
+      { name: '定价信息差', detail: '增加了提醒但核心矛盾未解决', priority: 'mid', icon: 'dollar' },
     ],
     unresolved: [
-      { name: 'LUT 浓度滑块', priority: 'high', mentions: 80, icon: 'sliders' },
-      { name: '自定义 LUT 导入', priority: 'high', mentions: 65, icon: 'film' },
-      { name: '直方图', priority: 'high', mentions: 55, icon: 'layout' },
-      { name: '峰值对焦', priority: 'high', mentions: 42, icon: 'aperture' },
-      { name: '半自动曝光', priority: 'high', mentions: 38, icon: 'camera' },
-      { name: 'iPad 适配', priority: 'mid', mentions: 33, icon: 'tablet' },
-      { name: '视频裁切比例', priority: 'mid', mentions: 28, icon: 'maximize' },
-      { name: 'Android 版本', priority: 'mid', mentions: 22, icon: 'tablet' },
-      { name: '文件管理系统', priority: 'mid', mentions: 20, icon: 'folder' },
-      { name: '降噪处理', priority: 'mid', mentions: 18, icon: 'speaker' },
-      { name: 'Anamorphic 模式', priority: 'low', mentions: 12, icon: 'film' },
-      { name: '外接麦克增益', priority: 'low', mentions: 10, icon: 'speaker' },
-      { name: '延时摄影', priority: 'low', mentions: 9, icon: 'camera' },
-      { name: '慢动作', priority: 'low', mentions: 8, icon: 'film' },
-      { name: '多机位同步', priority: 'low', mentions: 6, icon: 'move' },
-      { name: 'Apple Watch 远程控制', priority: 'low', mentions: 5, icon: 'tablet' },
+      { name: 'LUT 浓度调节', priority: 'high', mentions: 50, icon: 'sliders' },
+      { name: '直方图', priority: 'high', mentions: 22, icon: 'layout' },
+      { name: '自定义 LUT 导入', priority: 'high', mentions: 20, icon: 'film' },
+      { name: '半自动曝光', priority: 'high', mentions: 15, icon: 'camera' },
+      { name: '客服响应体系', priority: 'high', mentions: 22, icon: 'message' },
+      { name: '滤镜分类管理', priority: 'mid', mentions: 15, icon: 'film' },
+      { name: '拍照裁切/比例', priority: 'mid', mentions: 12, icon: 'camera' },
+      { name: '峰值对焦/斑马线', priority: 'mid', mentions: 10, icon: 'aperture' },
+      { name: '额外焦段', priority: 'mid', mentions: 11, icon: 'aperture' },
+      { name: '竖屏视频适配', priority: 'mid', mentions: 7, icon: 'maximize' },
+      { name: '锁屏小组件', priority: 'mid', mentions: 5, icon: 'layout' },
+      { name: 'iPad 适配', priority: 'low', mentions: 10, icon: 'tablet' },
+      { name: '外接硬盘直录', priority: 'low', mentions: 3, icon: 'folder' },
+      { name: '更多场景LUT', priority: 'low', mentions: 5, icon: 'film' },
+      { name: '人像模式', priority: 'low', mentions: 5, icon: 'camera' },
+      { name: 'Android 版', priority: 'low', mentions: 5, icon: 'tablet' },
+      { name: 'ProRes 支持', priority: 'low', mentions: 3, icon: 'film' },
     ],
   };
+
+  // ---------- US MARKET DATA ----------
+  const US_ISSUES = [
+    { issue: '海外登录验证码', severity: 'blocker', detail: '海外无法收短信验证码，无法登录/使用付费功能', icon: 'alert' },
+    { issue: '跨区订阅不同步', severity: 'high', detail: '中国区购买的Pro在美区不生效', icon: 'alert' },
+  ];
+
+  const CROSS_MARKET = [
+    { demand: '自定义 LUT', cn: '201 次', us: '12 次', consensus: true },
+    { demand: '拍照功能', cn: '145 次', us: '3 次', consensus: true },
+    { demand: '闪退/卡顿', cn: '98 次', us: '3 次', consensus: true },
+    { demand: 'ProRes/RAW', cn: '10 次', us: '10 次', consensus: true },
+    { demand: '外接存储', cn: '43 次', us: '2 次', consensus: true },
+    { demand: '国际化/i18n', cn: '—', us: '多条', consensus: false },
+    { demand: '海外登录验证', cn: '—', us: '阻断级', consensus: false },
+  ];
 
   // ---------- TREND DATA ----------
   const TREND_DATA = [
@@ -238,6 +259,33 @@
     }
   }
 
+  function renderUSInsights() {
+    const issueList = document.getElementById('usIssuesList');
+    if (issueList) {
+      issueList.innerHTML = US_ISSUES.map(d => {
+        const sevClass = d.severity === 'blocker' ? 'high' : d.severity;
+        const sevLabel = d.severity === 'blocker' ? 'BLOCKER' : d.severity.toUpperCase();
+        return `<div class="demand-item">
+          <div class="demand-icon">${icon(d.icon)}</div>
+          <div><div class="demand-name">${d.issue}</div><div class="demand-ver">${d.detail}</div></div>
+          <span class="demand-badge ${sevClass}">${sevLabel}</span>
+        </div>`;
+      }).join('');
+    }
+
+    const crossTable = document.getElementById('crossMarketTable');
+    if (crossTable) {
+      crossTable.innerHTML = CROSS_MARKET.map(d =>
+        `<tr>
+          <td class="compete-dim">${d.demand}</td>
+          <td>${d.cn}</td>
+          <td>${d.us}</td>
+          <td>${d.consensus ? '<span style="color:var(--accent-green)">SHARED</span>' : '<span style="color:var(--accent-orange)">US ONLY</span>'}</td>
+        </tr>`
+      ).join('');
+    }
+  }
+
   // ---------- PROGRESS RING ----------
   function animateRing() {
     const total = DEMANDS.resolved.length + DEMANDS.partial.length + DEMANDS.unresolved.length;
@@ -257,6 +305,10 @@
     resolvedCircle.style.strokeDashoffset = resolvedOffset;
     partialCircle.style.strokeDasharray = `${partialLen} ${circumference - partialLen}`;
     partialCircle.style.strokeDashoffset = -partialStart;
+
+    // Update ring center text dynamically
+    const ringPct = document.querySelector('.ring-pct');
+    if (ringPct) ringPct.textContent = Math.round(rPct * 100) + '%';
   }
 
   // ---------- HERO COUNTER ----------
@@ -351,6 +403,7 @@
     renderFeedback('all');
     renderTimeline();
     renderDemands();
+    renderUSInsights();
     initNav();
     initFilters();
     initTabs();
